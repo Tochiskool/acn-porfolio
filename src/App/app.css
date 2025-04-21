@@ -13,8 +13,8 @@
 }
 .imgOfChris {
   border-radius: 50%;
-  width: 100%;
-  max-width: 300p;
+  width: 50%;
+  max-width: 300px;
   border-radius: 50%;
   object-fit: cover;
   display: block;

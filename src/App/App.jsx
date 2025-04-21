@@ -45,8 +45,8 @@ const App = () => {
 
   return (
     <>
-      <header className='heroSection'>
-        <div className='center overlayContent'>
+      <header>
+        <div className='center'>
           <h1>Welcome to my Official Portfolio</h1>
           <h3>A Christian N 🙈</h3>
         </div>
