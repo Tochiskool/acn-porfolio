@@ -4,7 +4,7 @@
   grid-template-columns: repeat(2, 1fr);
   color: #ffffff;
   margin: 1rem;
-  background: url("/assets/james.png") center/cover no-repeat;
+  background: url("/assets/books.jpeg") center/cover no-repeat;
 }
 
 .left,
