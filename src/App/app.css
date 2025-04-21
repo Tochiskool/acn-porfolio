@@ -4,7 +4,7 @@
   grid-template-columns: repeat(2, 1fr);
   color: #ffffff;
   margin: 1rem;
-  background: url("/assets/books.jpeg") center/cover no-repeat;
+  background: url("/assets/christian.jpeg") center/cover no-repeat;
 }
 
 .left,
@@ -19,6 +19,7 @@
   object-fit: cover;
   display: block;
   margin: 0 auto;
+  outline: none;
 }
 .btnContainer {
   display: flex;
