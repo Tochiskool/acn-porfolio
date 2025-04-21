@@ -3,13 +3,51 @@
 Reset Styles
 ****************************
 ***************************/
+@import "normalize.css";
+
+/* Change all elements to use border-box */
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
 /***************************
 ****************************
 Base Styles
 ****************************
 ***************************/
-
+body {
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  background-color: #414042;
+}
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+a {
+  color: #871dc1;
+  font-weight: bold;
+}
+a:hover {
+  text-decoration: underline;
+}
+.center {
+  text-align: center;
+}
+header .center {
+  background: #414042;
+  color: #ffffff;
+  padding: 2rem;
+}
 /***************************
 ****************************
 Layout Styles
@@ -22,8 +60,44 @@ Module Styles
 ****************************
 ***************************/
 
+.home-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #ffffff;
+  color: #414042;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.home-button:hover {
+  background-color: #45a049; /* Slightly darker green when hovered */
+  transform: translateY(-3px); /* Slight lifting effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bigger shadow on hover */
+}
+.home-button:active {
+  background-color: #388e3c; /* Darker green when clicked */
+  transform: translateY(1px); /* Button appears pressed */
+}
 /***************************
 ****************************
 Theme Styles
 ****************************
 ***************************/
+.background-primary {
+  background: #437733; /*Orange*/
+}
+.background-secondary {
+  background: #0fa0d5; /*Blue*/
+}
+.background-tertiary {
+  background: #3b38e6; /*Green*/
+}
+/*****************************
+*****************************
+Image Style  
+******************************
+***************************+**/
