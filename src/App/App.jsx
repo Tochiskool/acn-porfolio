@@ -55,14 +55,13 @@ const App = () => {
       <main>
         <section className='mainContainer'>
           <div className='left'>
-            <img
-              className='imgOfChris'
-              src='/assets/chris.jpeg'
-              alt='Christian'
-            />
+            <div className='imgOfChris'>
+              <h1>Junior Javascript | React Engineer</h1>
+              <p>Devoted self thought engineer</p>
+            </div>
           </div>
           <div className='right'>
-            <h2 className='hero-subtitle'>{text}</h2>
+            <h4 className='hero-subtitle'>{text}</h4>
           </div>
         </section>
         <article>

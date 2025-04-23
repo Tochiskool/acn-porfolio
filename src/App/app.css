@@ -5,6 +5,7 @@
   color: #ffffff;
   margin: 1rem;
   background: url("/assets/christian.jpeg") center/cover no-repeat;
+  min-height: 400px; /* or a value that fits your layout */
 }
 
 .left,
@@ -12,14 +13,8 @@
   margin: 1.5rem;
 }
 .imgOfChris {
-  border-radius: 50%;
-  width: 50%;
-  max-width: 300px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-  outline: none;
+  text-align: center;
+  color: #414042;
 }
 .btnContainer {
   display: flex;
