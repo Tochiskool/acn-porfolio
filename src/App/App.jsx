@@ -51,7 +51,7 @@ const App = () => {
           <h3>A Christian N 🙈</h3>
         </div>
       </header>
-      <hr />
+      <hr className='line' />
       <main>
         <section className='mainContainer'>
           <div className='left'>

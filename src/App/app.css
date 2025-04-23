@@ -7,7 +7,11 @@
   background: url("/assets/christian.jpeg") center/cover no-repeat;
   min-height: 400px; /* or a value that fits your layout */
 }
-
+.line {
+  width: 90%;
+  border: 0.5rem solid white;
+  border-radius: 1rem;
+}
 .left,
 .right {
   margin: 1.5rem;
