@@ -69,6 +69,7 @@
   }
 
   .close-btn {
+    display: block; /* Show close button */
     align-self: flex-end;
     font-size: 2rem;
     cursor: pointer;
