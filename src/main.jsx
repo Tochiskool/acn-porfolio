@@ -6,7 +6,7 @@ import App from "./App/App.jsx";
 import Home from "./components/Home/Home.jsx";
 import About from "./pages/About/About.jsx";
 import Project from "./pages/Projects/Project.jsx";
-import Skills from "./pages/Skills/skills.jsx";
+import Skills from "./pages/Skills/Skills.jsx";
 import Services from "./pages/Services/services.jsx";
 import Contact from "./pages/Contact/contact.jsx";
 
