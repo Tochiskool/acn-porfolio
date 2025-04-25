@@ -15,7 +15,11 @@
   color: #ffffff;
   text-decoration: none;
 }
-
+.nav-links li a {
+  color: var(--textColor);
+  font-weight: 700;
+  text-decoration: none;
+}
 .nav-links.active {
   font-weight: bold;
   color: #00b3ff;
@@ -25,6 +29,9 @@
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
+}
+.close-btn {
+  display: none;
 }
 /* Responsive */
 /* Responsive for mobile - Menu comes from below */
