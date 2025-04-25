@@ -1,0 +1,41 @@
+/* styles.css */
+
+.aboutContainer {
+  display: grid;
+  grid: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+.extra-big-heading {
+  font-size: 6rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  background: linear-gradient(to right, var(--activeColor), var(--mainColor));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.normal-big {
+  background: linear-gradient(to right, var(--activeColor), var(--mainColor));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  font-size: 3rem;
+  font-family: cursive;
+}
+.aboutContainer .extra-big-heading,
+.aboutContainer .normal-big {
+  text-align: center;
+}
+.paraAboutEl {
+  margin: 1rem;
+  text-align: justify;
+  line-height: 2rem;
+  font-size: 1rem;
+}
+/* Responsive Grid: stack items on small screens */
+@media (max-width: 768px) {
+  .aboutContainer {
+    grid-template-columns: 1fr; /* stack left and right vertically */
+  }
+}
