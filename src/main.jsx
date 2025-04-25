@@ -4,9 +4,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App/App.jsx";
 import Home from "./components/Home/Home.jsx";
-import About from "./components/About/About.jsx";
-import Contact from "./components/Contact/Contact.jsx";
-import Project from "./components/Projects/Project.jsx";
+import About from "./pages/About/About.jsx";
+import Project from "./pages/Projects/Project.jsx";
+import Skills from "./pages/Skills/skills.jsx";
+import Services from "./pages/Services/services.jsx";
+import Contact from "./pages/Contact/contact.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -16,6 +18,8 @@ createRoot(document.getElementById("root")).render(
       <Route path='/about' element={<About />} />
       <Route path='/contact' element={<Contact />} />
       <Route path='/projects' element={<Project />} />
+      <Route path='/skills' element={<Skills />} />
+      <Route path='/services' element={<Services />} />
     </Routes>
   </BrowserRouter>
 );

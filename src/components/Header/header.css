@@ -1,0 +1,70 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  color: #ffffff;
+}
+.logo {
+  font-size: 1.5rem;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-links.active {
+  font-weight: bold;
+  color: #00b3ff;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+/* Responsive */
+/* Responsive for mobile - Menu comes from below */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--activeColor);
+    top: -20px;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    transform: translateY(-100%);
+    opacity: 1;
+    pointer-events: none;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    z-index: 999;
+  }
+  .nav-links li {
+    text-align: center;
+  }
+  .nav-links li a {
+    color: var(--textColor);
+    text-decoration: none;
+  }
+  .nav-links.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .close-btn {
+    align-self: flex-end;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+}

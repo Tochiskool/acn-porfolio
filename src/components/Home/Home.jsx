@@ -1,10 +1,11 @@
 import React from "react";
+import Header from "../Header/Header";
 
 const Home = () => {
   return (
     <>
-      <header class='background-primary'>
-        <div class='container'>Header Content</div>
+      <header>
+        <Header />
       </header>
       <main>
         <section class='background-secondary'>

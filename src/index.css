@@ -22,30 +22,30 @@ body {
 Base Styles
 ****************************
 ***************************/
+:root {
+  --mainColor: #ced6e0;
+  --mainColorLight: #414042;
+  --activeColor: #00b3ff;
+  --textColor: #ffffff;
+}
 body {
-  color: #ffffff;
+  color: var(--textColor);
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
-  background-color: #414042;
+  background-color: var(--mainColor);
 }
 h1,
 h2,
 h3 {
   font-weight: bold;
 }
-a {
-  color: #871dc1;
-  font-weight: bold;
-}
-a:hover {
-  text-decoration: underline;
-}
+
 .center {
   text-align: center;
 }
 header .center {
-  background: #414042;
-  color: #ffffff;
+  background: var(--mainColor);
+  color: var(--textColor);
   padding: 2rem;
 }
 /***************************
@@ -63,8 +63,8 @@ Module Styles
 .home-button {
   display: inline-block;
   padding: 12px 30px;
-  background-color: #ffffff;
-  color: #414042;
+  background-color: var(--textColor);
+  color: var(--mainColorLight);
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -74,13 +74,14 @@ Module Styles
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .home-button:hover {
-  background-color: #45a049; /* Slightly darker green when hovered */
-  transform: translateY(-3px); /* Slight lifting effect */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bigger shadow on hover */
+  background-color: var(--mainColor);
+  color: var(--textColor);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 .home-button:active {
-  background-color: #388e3c; /* Darker green when clicked */
-  transform: translateY(1px); /* Button appears pressed */
+  background-color: #388e3c;
+  transform: translateY(1px);
 }
 /***************************
 ****************************
