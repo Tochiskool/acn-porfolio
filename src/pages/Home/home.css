@@ -5,7 +5,7 @@
   color: #ffffff;
   margin: 0;
   background: url("/assets/christian.jpeg") center/cover no-repeat;
-  min-height: 400px; /* or a value that fits your layout */
+  min-height: 50rem; /* or a value that fits your layout */
 }
 .line {
   width: 90%;
@@ -19,11 +19,6 @@
 .imgOfChris {
   text-align: center;
   color: #ffffff;
-}
-.btnContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
 }
 
 /* Responsive Grid: stack items on small screens */

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router";
-import "./app.css";
+import "./home.css";
 
 const careers = [
   "👋 Hey there! I'm a passionate developer who turns coffee into clean code.",
@@ -9,7 +9,7 @@ const careers = [
   "💬 Let’s connect, collaborate, and create something awesome together!",
 ];
 
-const App = () => {
+const Home = () => {
   const [text, setText] = useState("");
   const [careerIndex, setCareerIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -48,7 +48,9 @@ const App = () => {
       <header>
         <div className='center'>
           <h1>Welcome to my Official Portfolio</h1>
-          <h3>A Christian N 🙈</h3>
+          <h3>
+            A Christian N <span id='smiley'>🙈</span>
+          </h3>
         </div>
       </header>
       <hr className='line' />
@@ -65,17 +67,17 @@ const App = () => {
           </div>
         </section>
         <article>
-          <div className='btnContainer'>
+          {/* <div className='btnContainer'>
             <div className='homeButton'>
               <Link to='/home' className='home-button'>
                 Go to Home
               </Link>
             </div>
-          </div>
+          </div> */}
         </article>
       </main>
     </>
   );
 };
 
-export default App;
+export default Home;

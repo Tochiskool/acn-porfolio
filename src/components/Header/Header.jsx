@@ -31,7 +31,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to='/home'
+              to='/'
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Home
@@ -39,7 +39,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to='/about'
+              to='about'
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               About
@@ -47,7 +47,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to='/projects'
+              to='projects'
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Projects
@@ -55,7 +55,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to='/skills'
+              to='skills'
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Skills
@@ -63,7 +63,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to='/services'
+              to='services'
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Services
@@ -71,7 +71,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to='/contact'
+              to='contact'
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Contact
