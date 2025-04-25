@@ -40,6 +40,7 @@ const Header = () => {
           <li>
             <NavLink
               to='about'
+              onClick={closeMenu}
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               About
@@ -48,6 +49,7 @@ const Header = () => {
           <li>
             <NavLink
               to='projects'
+              onClick={closeMenu}
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Projects
@@ -56,6 +58,7 @@ const Header = () => {
           <li>
             <NavLink
               to='skills'
+              onClick={closeMenu}
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Skills
@@ -64,6 +67,7 @@ const Header = () => {
           <li>
             <NavLink
               to='services'
+              onClick={closeMenu}
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Services
@@ -72,6 +76,7 @@ const Header = () => {
           <li>
             <NavLink
               to='contact'
+              onClick={closeMenu}
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Contact
