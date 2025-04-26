@@ -22,6 +22,8 @@ const Footer = () => {
         <a
           href='https://join.skype.com/invite/i2d5kO6hi9eR'
           className='footer-link'
+          rel='noopener noreferrer'
+          target='_blank'
         >
           <FaSkype className='footer-icon' />A Christian N
         </a>
