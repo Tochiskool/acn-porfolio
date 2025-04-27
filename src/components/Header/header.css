@@ -6,7 +6,14 @@
   color: var(--mainColorLight);
 }
 .logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  font-family: cursive;
+  background: linear-gradient(to right, var(--activeColor), var(--mainColor));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .nav-links {
   display: flex;
