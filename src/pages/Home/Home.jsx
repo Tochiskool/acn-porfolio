@@ -66,15 +66,6 @@ const Home = () => {
             <h4 className='hero-subtitle'>{text}</h4>
           </div>
         </section>
-        <article>
-          {/* <div className='btnContainer'>
-            <div className='homeButton'>
-              <Link to='/home' className='home-button'>
-                Go to Home
-              </Link>
-            </div>
-          </div> */}
-        </article>
       </main>
     </>
   );
