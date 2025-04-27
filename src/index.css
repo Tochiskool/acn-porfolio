@@ -24,7 +24,7 @@ Base Styles
 ***************************/
 :root {
   --mainColor: #ced6e0;
-  --mainColorLight: #414042;
+  --mainColorLight: #29094a;
   --activeColor: #00b3ff;
   --textColor: #ffffff;
 }
@@ -33,7 +33,7 @@ html,
 #root {
   color: var(--mainColorLight);
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: normal;
+  font-weight: bold;
   height: 100%;
   margin: 0;
 }

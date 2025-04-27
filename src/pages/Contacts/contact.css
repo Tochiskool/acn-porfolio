@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
 }
 .input-style input,
@@ -46,11 +46,22 @@ form button {
   box-shadow: 5px 5px 10px var(--activeColor) inset;
   padding: 0.75rem;
 }
+
 .input-style input:focus,
 .input-style select:focus,
 .input-style textarea:focus {
   border-color: var(--activeColor);
   box-shadow: 0 0 8px var(--activeColor);
+}
+.textarea-style {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  box-sizing: border-box;
 }
 form button:hover {
   background: var(--mainColor);

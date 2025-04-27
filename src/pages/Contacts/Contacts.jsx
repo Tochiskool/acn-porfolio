@@ -31,7 +31,6 @@ const Contacts = () => {
         <form onSubmit={handleSubmit}>
           <div className='input-style'>
             <input
-              className='input-style'
               type='text'
               name='name'
               onChange={handleChange}
@@ -41,7 +40,6 @@ const Contacts = () => {
             />
 
             <input
-              className='input-style'
               type='email'
               name='email'
               onChange={handleChange}
@@ -51,7 +49,6 @@ const Contacts = () => {
             />
 
             <select
-              className='input-style'
               name='type'
               onChange={handleChange}
               value={contactInfo.type}
@@ -65,7 +62,6 @@ const Contacts = () => {
             </select>
 
             <input
-              className='input-style'
               type='number'
               name='phoneNumber'
               onChange={handleChange}
@@ -74,8 +70,8 @@ const Contacts = () => {
               required
             />
 
-            <input
-              className='input-style'
+            <textarea
+              className='textarea-style'
               type='text'
               name='textArea'
               onChange={handleChange}
