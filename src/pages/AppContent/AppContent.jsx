@@ -4,7 +4,6 @@ import Home from "../Home/Home.jsx";
 import About from "../About/About.jsx";
 import Project from "../Projects/Project.jsx";
 import Skills from "../Skills/Skills.jsx";
-import Services from "../Services/Services.jsx";
 import Contacts from "../Contacts/Contacts.jsx";
 import Layout from "../../components/Layout/Layout.jsx";
 import Footer from "../Footer/Footer.jsx";
@@ -24,7 +23,6 @@ const AppContent = () => {
             <Route path='contact' element={<Contacts />} />
             <Route path='projects' element={<Project />} />
             <Route path='skills' element={<Skills />} />
-            <Route path='services' element={<Services />} />
           </Route>
         </Routes>
       </div>

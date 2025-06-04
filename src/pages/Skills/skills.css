@@ -1,0 +1,30 @@
+/* .skillContainer {
+  margin: 2rem;
+  padding: 2rem;
+  border-width: 1rem;
+  border-style: solid;
+  border-radius: 2rem;
+  border-color: linear-gradient(to right, var(--activeColor), var(--mainColor));
+} */
+.skillContainer h1,
+.skillContainer h4 {
+  text-align: center;
+  background: linear-gradient(to right, var(--activeColor), var(--mainColor));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.skillContainer ul {
+  list-style: none;
+  display: flex;
+  flex: 2 0 200px;
+  gap: 30px;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.skillContainer li img {
+  max-width: 200px;
+  height: 200px;
+}
