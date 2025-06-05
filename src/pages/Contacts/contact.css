@@ -87,7 +87,10 @@ form button:hover {
   .contactContainer .formContainer form .input-style {
     width: 90%;
   }
-
+  .submitted {
+    font-size: 2rem;
+    font-weight: 400;
+  }
   form button {
     width: 50%;
   }
