@@ -70,6 +70,18 @@ form button:hover {
   transform: scale(1.05);
   transition: all 0.3s ease;
 }
+.submitted {
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  font-family: cursive;
+  background: linear-gradient(to right, var(--activeColor), var(--mainColor));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
 
 @media (max-width: 768px) {
   .contactContainer .formContainer form .input-style {

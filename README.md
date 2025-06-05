@@ -1,6 +1,6 @@
 # Welcome to my Official portfolio.
 
-- My intention is to create a portfolio where my projects will be in a data base. The projects will be fetched by type and I will expose all the contacts I get and maybe make our conversation visible to employees and collegues depending on what they select when contacting me. I think it is going to be an exciting journey with so much to accomplish.
+- My intention is to create a portfolio where my projects will be receive a Mongo db compass database.
 
 ## Hosting site.
 
@@ -16,6 +16,18 @@ I will host the app on Vercel because Vercel handles non static web applications
 - Express
 - React
 - Node
+```
+
+## Dependencies
+
+```bash
+# backend
+express
+mongoose
+cors
+# frontend
+vite
+react-router-dom
 ```
 
 # React + Vite
