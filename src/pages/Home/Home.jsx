@@ -53,7 +53,7 @@ const Home = () => {
           </h3>
         </div>
       </header>
-      <hr className='line' />
+      {/* <hr className='line' /> */}
       <main>
         <section className='mainContainer'>
           <div className='left'>

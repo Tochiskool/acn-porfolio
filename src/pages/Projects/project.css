@@ -1,0 +1,43 @@
+.mainProjectContainer h1 {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  background: linear-gradient(to right, var(--activeColor), var(--mainColor));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.mainProjectContainer .projectsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.mainProjectContainer .projectsContainer .projectDetails {
+  display: flex;
+  flex: 0 2 400px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mainProjectContainer .projectsContainer .projectDetails img {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .mainProjectContainer h1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainProjectContainer h1 {
+    width: 100%;
+  }
+}

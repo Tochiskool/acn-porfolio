@@ -6,6 +6,11 @@
   margin: 0;
   background: url("/assets/christian.jpeg") center/cover no-repeat;
   min-height: 50rem; /* or a value that fits your layout */
+  width: 100%;
+  height: 50%;
+  align-content: center;
+  border-top-left-radius: 25rem;
+  border-top-right-radius: 25rem;
 }
 
 .left,
@@ -16,7 +21,14 @@
   text-align: center;
   color: #ffffff;
 }
-
+.hero-subtitle {
+  margin-top: 2rem;
+}
+/* .line {
+  border-width: 0.5rem;
+  border-color: var(--mainColorLight);
+  border-radius: 20%;
+} */
 /* Responsive Grid: stack items on small screens */
 @media (max-width: 768px) {
   .mainContainer {
