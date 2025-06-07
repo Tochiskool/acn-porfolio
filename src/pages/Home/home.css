@@ -42,15 +42,7 @@
 .typingText.hidden {
   opacity: 0;
 }
-.hero-subtitle {
-  margin-top: 2rem;
-}
 
-/* .line {
-  border-width: 0.5rem;
-  border-color: var(--mainColorLight);
-  border-radius: 20%;
-} */
 /* Responsive Grid: stack items on small screens */
 @media (max-width: 768px) {
   .mainContainer {
