@@ -3,30 +3,46 @@ import ProjectDetails from "./ProjectDetails/ProjectDetails";
 import "./project.css";
 const Project = () => {
   const projectData = [
+    // {
+    //   id: 1,
+    //   name: "Elilly International Hotel ",
+    //   image: "/projectImages/hotel.png",
+    //   stack: "react vite|css3|react hook form",
+    //   skill: "Displaying Advance styleing techniques",
+    //   link: "https://elillyhotel.com/",
+    // },
     {
       id: 1,
       name: "Zanolla Impianti Dashboard",
       image: "/projectImages/zanola.png",
       stack: "react vite|css3|ajax",
-      skill: "Displaying Advance styleing techniques",
+      skill: "Advance css techniques freelancing work in progress",
       link: "https://zanola-impianti-dashboard.vercel.app/",
     },
+    // {
+    //   id: 2,
+    //   name: "Van Life",
+    //   image: "/projectImages/van.png",
+    //   stack: "react vite|react-router-dom|css3|ajax",
+    //   skill: "Work in process React etc",
+    //   link: "https://shop-a-van.vercel.app/",
+    // },
     {
       id: 2,
-      name: "Van Life",
-      image: "/projectImages/van.png",
-      stack: "react vite|react-router-dom|css3|ajax",
-      skill: "Advance routing, Protected routes etc",
-      link: "https://shop-a-van.vercel.app/",
-    },
-    {
-      id: 3,
       name: "Digital Support",
       image: "/projectImages/breath.png",
       stack: "react vite|css3|",
       skill: "Custom mobile first design technique with ",
       link: "https://pdas-psi.vercel.app/",
     },
+    // {
+    //   id: 4,
+    //   name: "Soderenergy",
+    //   image: "/projectImages/soderenergi.png",
+    //   stack: "react vite| redux | css3|",
+    //   skill: "SMobile first principle techniques, figma ",
+    //   link: "https://www.soderenergi.se/",
+    // },
   ];
   console.log(projectData);
   return (
