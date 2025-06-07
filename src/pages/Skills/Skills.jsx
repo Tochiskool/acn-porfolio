@@ -4,7 +4,6 @@ const Skills = () => {
   const [icons, setIcons] = useState([
     "/assets/skills/1react.png",
     "/assets/skills/2mongo.png",
-    "/assets/skills/3sql.png",
     "/assets/skills/4mysql.png",
     "/assets/skills/5express.png",
     "/assets/skills/6node.png",
@@ -12,6 +11,7 @@ const Skills = () => {
     "/assets/skills/07redux.jpeg",
     "/assets/skills/08-tailwindcss-logo.png",
     "/assets/skills/figma.png",
+    "/assets/skills/workbench.webp",
   ]);
 
   const displayIcons = icons.map((icon, index) => (

@@ -14,12 +14,12 @@ const Home = () => {
   const [careerIndex, setCareerIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [fade, setFade] = useState(true);
 
   const typingSpeed = 50;
   const pauseDuration = 1500;
 
   const timeoutRef = useRef(null);
-
   useEffect(() => {
     if (isPaused) return;
 
@@ -37,18 +37,27 @@ const Home = () => {
         setCharIndex(0);
         setText("");
         setCareerIndex((prev) => (prev + 1) % careers.length);
+        setFade(true);
       }, pauseDuration);
     }
 
     // This is the key fix: add careerIndex as a dependency 👇
   }, [charIndex, isPaused, careerIndex]);
-
+  useEffect(() => {
+    return () => clearTimeout(timeoutRef.current);
+  }, []);
   return (
     <>
       <header>
         <div className='center'>
-          <h1>Welcome to my Official Portfolio</h1>
-          <h3>
+          <h1
+            data-aos='fade-right'
+            data-aos-offset='300'
+            data-aos-easing='ease-in-sine'
+          >
+            When the drive is high, the expectation is overwhelming
+          </h1>
+          <h3 data-aos='zoom-in-up'>
             A Christian N <span id='smiley'>🙈</span>
           </h3>
         </div>
@@ -63,7 +72,11 @@ const Home = () => {
             </div>
           </div>
           <div className='right'>
-            <h4 className='hero-subtitle'>{text}</h4>
+            <div className='typingWrapper'>
+              <div className={`typingText ${!fade ? "hidden" : ""}`}>
+                <h2 className='hero-subtitle'>{text}</h2>
+              </div>
+            </div>
           </div>
         </section>
       </main>

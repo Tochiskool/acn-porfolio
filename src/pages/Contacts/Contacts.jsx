@@ -76,8 +76,8 @@ const Contacts = () => {
   }
   return (
     <div className='contactContainer'>
-      <h1>Leave a message</h1>
-      <div className='formContainer'>
+      <h1 data-aos='fade-right'>Leave a message</h1>
+      <div data-aos='flip-up' className='formContainer'>
         <form onSubmit={handleSubmit}>
           <div className='input-style'>
             <input
@@ -130,7 +130,9 @@ const Contacts = () => {
               required
             />
           </div>
-          <button type='submit'>Submit</button>
+          <button className='btn-breath' type='submit'>
+            Submit
+          </button>
         </form>
       </div>
     </div>

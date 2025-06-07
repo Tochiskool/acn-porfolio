@@ -11,19 +11,41 @@
   align-content: center;
   border-top-left-radius: 25rem;
   border-top-right-radius: 25rem;
+  overflow: hidden;
 }
 
 .left,
 .right {
   margin: 1.5rem;
 }
+.right {
+  min-height: 10rem;
+}
 .imgOfChris {
   text-align: center;
   color: #ffffff;
 }
+.typingWrapper {
+  min-height: 8rem;
+  display: flex;
+  align-items: center;
+}
+.typingText {
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  white-space: pre-wrap;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.typingText.hidden {
+  opacity: 0;
+}
 .hero-subtitle {
   margin-top: 2rem;
 }
+
 /* .line {
   border-width: 0.5rem;
   border-color: var(--mainColorLight);
@@ -33,5 +55,8 @@
 @media (max-width: 768px) {
   .mainContainer {
     grid-template-columns: 1fr; /* stack left and right vertically */
+  }
+  .typingText {
+    min-height: 8rem; /* more padding for mobile line wrapping */
   }
 }

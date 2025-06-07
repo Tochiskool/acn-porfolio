@@ -5,13 +5,23 @@ const ProjectDetails = ({ projects }) => {
     <>
       {projects.map((project) => {
         return (
-          <div className='projectDetails' key={project.id}>
+          <div
+            data-aos='fade-up'
+            data-aos-anchor-placement='bottom-bottom'
+            className='projectDetails'
+            key={project.id}
+          >
             <img src={project.image} alt={`Image of ${project.name}`} />
-            <h4>
-              {project.name}: <span>{project.stack}</span>
-            </h4>
-            <p>Summary:{project.skill}</p>
-            <Link to={project.link}>checkour {project.name}</Link>
+            <div className='projectContent'>
+              <h4>
+                {project.name}:{" "}
+                <span className='spanning'>{project.stack}</span>
+              </h4>
+              <p>Summary: {project.skill}</p>
+              <Link className='links' to={project.link}>
+                checkout {project.name}
+              </Link>
+            </div>
           </div>
         );
       })}

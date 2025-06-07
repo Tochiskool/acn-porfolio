@@ -11,7 +11,7 @@
 .mainProjectContainer .projectsContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 2rem;
@@ -27,7 +27,52 @@
 }
 
 .mainProjectContainer .projectsContainer .projectDetails img {
-  max-width: 100%;
+  object-fit: cover;
+  object-position: center -1.5rem;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0; /*prevent image from shrinking */
+}
+.projectContent {
+  flex: 1; /* take the remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.projectDetails h4 {
+  background: linear-gradient(to right, var(--activeColor), var(--mainColor));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  justify-content: center;
+  text-align: center;
+}
+.projectDetails p {
+  background: linear-gradient(to right, var(--activeColor), var(--mainColor));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+.projectContent .links {
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Animate images */
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.projectDetails img {
+  animation: breathe 3s ease-in-out infinite;
 }
 
 @media (max-width: 768px) {

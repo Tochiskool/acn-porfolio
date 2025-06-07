@@ -83,6 +83,22 @@ form button:hover {
   text-align: center;
 }
 
+/* Animate images */
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-breath {
+  animation: breathe 2s ease-in-out infinite;
+}
 @media (max-width: 768px) {
   .contactContainer .formContainer form .input-style {
     width: 90%;

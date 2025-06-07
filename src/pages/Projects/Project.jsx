@@ -16,7 +16,7 @@ const Project = () => {
       name: "Van Life",
       image: "/projectImages/van.png",
       stack: "react vite|react-router-dom|css3|ajax",
-      skill: "An intersting Routing Project Protected routes etc",
+      skill: "Advance routing, Protected routes etc",
       link: "https://shop-a-van.vercel.app/",
     },
     {
