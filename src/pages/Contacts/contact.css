@@ -1,5 +1,5 @@
 .contactContainer h1 {
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 900;
   letter-spacing: 1px;
   line-height: 1.2;
@@ -104,15 +104,27 @@ form button:hover {
     width: 90%;
   }
   .submitted {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   form button {
     width: 50%;
   }
+  .contactContainer h1 {
+    font-size: 3;
+  }
 }
 
 @media (max-width: 480px) {
+  .contactContainer .formContainer form .input-style {
+    width: 90%;
+  }
   .submitted {
-    font-size: 2rem; /* even smaller on phones */
+    font-size: 2rem;
+  }
+  form button {
+    width: 50%;
+  }
+  .contactContainer h1 {
+    font-size: 3;
   }
 }
