@@ -19,14 +19,7 @@ const Project = () => {
       skill: "Advance css techniques freelancing work in progress",
       link: "https://zanola-impianti-dashboard.vercel.app/",
     },
-    // {
-    //   id: 2,
-    //   name: "Van Life",
-    //   image: "/projectImages/van.png",
-    //   stack: "react vite|react-router-dom|css3|ajax",
-    //   skill: "Work in process React etc",
-    //   link: "https://shop-a-van.vercel.app/",
-    // },
+
     {
       id: 2,
       name: "Digital Support",
@@ -35,14 +28,7 @@ const Project = () => {
       skill: "Custom mobile first design technique with ",
       link: "https://pdas-psi.vercel.app/",
     },
-    // {
-    //   id: 4,
-    //   name: "Soderenergy",
-    //   image: "/projectImages/soderenergi.png",
-    //   stack: "react vite| redux | css3|",
-    //   skill: "SMobile first principle techniques, figma ",
-    //   link: "https://www.soderenergi.se/",
-    // },
+
   ];
   console.log(projectData);
   return (

@@ -8,6 +8,8 @@ Base Styles
   --mainColorLight: #29094a;
   --activeColor: #00b3ff;
   --textColor: #ffffff;
+  --darkMode:#121212;
+  --ligthColor:#f5f5f5;
 }
 *,
 *::before,
@@ -24,10 +26,16 @@ html {
 
 body {
   font-family: "Inter", system-ui, sans-serif;
-  background-color: #fff;
-  color: #111;
+  background-color: var(--textColor);
+  color: var(--darkMode);
   line-height: 1.6;
   padding: 1rem;
+
+}
+/* Apply dark mode */
+body.dark-mode{
+  background-color: var(--darkMode);
+  color:var(--ligthColor);
 }
 
 /* Optional base spacing utility for sections */
@@ -51,8 +59,9 @@ h3 {
 .center {
   text-align: center;
 }
+
 header .center {
-  color: var(--mainColorLight);
+
   padding: 2rem;
 }
 
@@ -96,15 +105,7 @@ Module Styles
 Theme Styles
 ****************************
 ***************************/
-.background-primary {
-  background: #437733; /*Orange*/
-}
-.background-secondary {
-  background: #0fa0d5; /*Blue*/
-}
-.background-tertiary {
-  background: #3b38e6; /*Green*/
-}
+
 /*****************************
 *****************************
 Image Style  

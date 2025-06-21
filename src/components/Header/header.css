@@ -2,8 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 1rem;
+  /* background-color: var(--mainColor); */
   color: var(--mainColorLight);
+  padding: 1rem;
 }
 .logo {
   font-size: 2rem;
@@ -24,10 +25,19 @@
   text-decoration: none;
   font-weight: 900;
 }
-.nav-links li a {
+.nav-links a {
   color: var(--mainColorLight);
-  font-weight: 700;
   text-decoration: none;
+  padding: 0.5rem;
+}
+/* Dark Mode */
+body.dark-mode .navbar {
+  background-color: var(--darkMode);
+  color: var(--ligthColor);
+}
+
+body.dark-mode .nav-links a {
+  color: var(--ligthColor);
 }
 
 .nav-links li a.active {

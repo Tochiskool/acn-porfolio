@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router";
 import "./home.css";
+import { useTheme } from "../../components/UseTheme/useTheme";
 
 const careers = [
   "👋 Hey there! I'm a passionate developer who turns coffee into clean code.",
@@ -9,12 +10,14 @@ const careers = [
   "💬 Let’s connect, collaborate, and create something awesome together!",
 ];
 
-const Home = () => {
+const Home = () => {  
+  const {isDarkMode} = useTheme()
   const [text, setText] = useState("");
   const [careerIndex, setCareerIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [fade, setFade] = useState(true);
+
 
   const typingSpeed = 50;
   const pauseDuration = 1500;
@@ -49,13 +52,13 @@ const Home = () => {
   return (
     <>
       <header>
-        <div className='center'>
+        <div className={`center ${isDarkMode ? "dark": "light"}`}>
           <h1
             data-aos='fade-right'
             data-aos-offset='300'
             data-aos-easing='ease-in-sine'
           >
-            When the drive is high, the expectation is overwhelming
+            When the drive is high, the result is overwhelming
           </h1>
           <h3 data-aos='zoom-in-up'>
             A Christian N <span id='smiley'>🙈</span>
@@ -67,8 +70,8 @@ const Home = () => {
         <section className='mainContainer'>
           <div className='left'>
             <div className='imgOfChris'>
-              <h1>Junior Javascript | React Engineer</h1>
-              <p>Devoted self thought engineer</p>
+              <h1>Junior Javascript | React Engineer | MERN STACK</h1>
+              <p>Devoted Software engineer</p>
             </div>
           </div>
           <div className='right'>
