@@ -36,6 +36,14 @@ const Project = () => {
       skill: "Fluid website built with mobile first principles  ",
       link: "https://acehealthcaresolution.org/",
     },
+    {
+      id: 3,
+      name: "An Online Ecommerce shop",
+      image: "/projectImages/ecom.png",
+      stack: "react|express|css3|node|mongoDB",
+      skill: "Mobile first ecommerce web application. Work in Progress ",
+      link: "https://tlinker-frontend.vercel.app/",
+    },
 
   ];
   console.log(projectData);
@@ -45,6 +53,7 @@ const Project = () => {
         Check out my work-in-progress projects built with a mobile-first
         approach, responsive layouts, and scalable architecture.
       </h1>
+      <h2 style={{fontStyle:"italic"}}>Project count: {projectData.length}</h2>
       <div className='projectsContainer'>
         <ProjectDetails projects={projectData} />
       </div>
