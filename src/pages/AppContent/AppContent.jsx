@@ -1,5 +1,6 @@
-import React,{useState} from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
+import NotFound from "../NotFound/NotFound.jsx";
 import Home from "../Home/Home.jsx";
 import About from "../About/About.jsx";
 import Project from "../Projects/Project.jsx";
@@ -11,6 +12,7 @@ import { useLocation } from "react-router-dom";
 import "./AppContent.css";
 import {FaMoon, FaSun} from "react-icons/fa"
 import { useTheme } from "../../components/UseTheme/useTheme.jsx";
+
 
 const AppContent = () => {
   const location = useLocation();
@@ -35,6 +37,7 @@ const AppContent = () => {
             <Route path='contact' element={<Contacts />} />
             <Route path='projects' element={<Project />} />
             <Route path='skills' element={<Skills />} />
+            <Route path="*" element={<NotFound />} />  
           </Route>
         </Routes>
             

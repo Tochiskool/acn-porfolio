@@ -16,17 +16,25 @@ const Project = () => {
       name: "Zanolla Impianti Dashboard",
       image: "/projectImages/zanola.png",
       stack: "react vite|css3|ajax",
-      skill: "Advance css techniques freelancing work in progress",
+      skill: "An amazing dashboard with a display of css technique.",
       link: "https://zanola-impianti-dashboard.vercel.app/",
     },
 
+    // {
+    //   id: 2,
+    //   name: "Digital Support",
+    //   image: "/projectImages/breath.png",
+    //   stack: "react vite|css3|",
+    //   skill: "Custom mobile first design technique with ",
+    //   link: "https://pdas-psi.vercel.app/",
+    // },
     {
       id: 2,
-      name: "Digital Support",
-      image: "/projectImages/breath.png",
-      stack: "react vite|css3|",
-      skill: "Custom mobile first design technique with ",
-      link: "https://pdas-psi.vercel.app/",
+      name: "Ace Health Care Solution",
+      image: "/projectImages/nelo.png",
+      stack: "react|express|css3|node|mongoDB",
+      skill: "Fluid website built with mobile first principles  ",
+      link: "https://acehealthcaresolution.org/",
     },
 
   ];

@@ -78,7 +78,7 @@ const Home = () => {
             When the drive is high, the result is overwhelming
           </h1>
           <h3 data-aos='zoom-in-up'>
-            A Christian N <span id='smiley'>🙈</span>
+            A Christian N <span id='smiley'>🥋</span>
           </h3>
         </div>
       </header>
