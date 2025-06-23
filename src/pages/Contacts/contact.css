@@ -99,6 +99,16 @@ form button:hover {
 .btn-breath {
   animation: breathe 2s ease-in-out infinite;
 }
+.btn-breath:hover {
+  background-color: #0056b3;
+}
+
+.btn-breath:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 @media (max-width: 768px) {
   .contactContainer .formContainer form .input-style {
     width: 90%;
