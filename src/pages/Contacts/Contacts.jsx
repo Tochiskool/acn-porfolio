@@ -1,14 +1,14 @@
-import React, { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import "./contact.css";
+import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './contact.css';
 
 const Contacts = () => {
   const [contactInfo, setContactInfo] = useState({
-    name: "",
-    email: "",
-    type: "",
-    phoneNumber: "",
-    textArea: "",
+    name: '',
+    email: '',
+    type: '',
+    phoneNumber: '',
+    textArea: '',
   });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,38 +28,38 @@ const Contacts = () => {
 
     try {
       const response = await fetch(
-        "https://portfolio2025-1-6fs4.onrender.com/createContacts",
+        'https://portfolio2025-1-6fs4.onrender.com/createContacts',
         {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(contactInfo),
         }
       );
 
-      if (!response.ok) throw new Error("Failed to submit contact form");
-      
+      if (!response.ok) throw new Error('Failed to submit contact form');
+
       await response.json();
       setSubmitted(true);
       setContactInfo({
-        name: "",
-        email: "",
-        type: "",
-        phoneNumber: "",
-        textArea: "",
+        name: '',
+        email: '',
+        type: '',
+        phoneNumber: '',
+        textArea: '',
       });
       formRef.current?.focus(); // accessibility: move focus to confirmation
     } catch (error) {
-      console.error("Error submitting form:", error.message);
+      console.error('Error submitting form:', error.message);
     } finally {
       setIsSubmitting(false);
     }
 
-    setTimeout(() => navigate("/"), 3000);
+    setTimeout(() => navigate('/'), 3000);
   };
 
   if (submitted) {
     return (
-      <div className='submitted'>
+      <div className="submitted">
         <p tabIndex={-1} ref={formRef}>
           Thank you for contacting me! I will get back to you soon.
         </p>
@@ -68,67 +68,69 @@ const Contacts = () => {
   }
 
   return (
-    <div className='contactContainer'>
-      <h1 data-aos='fade-right'>Leave a message</h1>
-      <div data-aos='flip-up' className='formContainer'>
+    <div className="contactContainer">
+      <h1 data-aos="fade-right">Leave a message</h1>
+      <div data-aos="flip-up" className="formContainer">
         <form onSubmit={handleSubmit} aria-label="Contact form">
-          <div className='input-style'>
-            <label htmlFor='name'>Name:</label>
+          <div className="input-style">
+            <label htmlFor="name">Name:</label>
             <input
-              id='name'
-              type='text'
-              name='name'
+              id="name"
+              type="text"
+              name="name"
               onChange={handleChange}
               value={contactInfo.name}
               required
             />
 
-            <label htmlFor='email'>Email:</label>
+            <label htmlFor="email">Email:</label>
             <input
-              id='email'
-              type='email'
-              name='email'
+              id="email"
+              type="email"
+              name="email"
               onChange={handleChange}
               value={contactInfo.email}
               required
             />
 
-            <label htmlFor='type'>Contact Type:</label>
+            <label htmlFor="type">Contact Type:</label>
             <select
-              id='type'
-              name='type'
+              id="type"
+              name="type"
               onChange={handleChange}
               value={contactInfo.type}
               required
             >
-              <option value='' disabled>Choose type</option>
-              <option value='Friend'>Friend</option>
-              <option value='Employer'>Employer</option>
+              <option value="" disabled>
+                Choose type
+              </option>
+              <option value="Friend">Friend</option>
+              <option value="Employer">Employer</option>
             </select>
 
-            <label htmlFor='phoneNumber'>Phone Number:</label>
+            <label htmlFor="phoneNumber">Phone Number:</label>
             <input
-              id='phoneNumber'
-              type='tel'
-              name='phoneNumber'
+              id="phoneNumber"
+              type="tel"
+              name="phoneNumber"
               onChange={handleChange}
               value={contactInfo.phoneNumber}
               required
               pattern="[0-9]+"
             />
 
-            <label htmlFor='textArea'>Message:</label>
+            <label htmlFor="textArea">Message:</label>
             <textarea
-              id='textArea'
-              name='textArea'
+              id="textArea"
+              name="textArea"
               onChange={handleChange}
               value={contactInfo.textArea}
               required
             />
           </div>
 
-          <button className='btn-breath' type='submit' disabled={isSubmitting}>
-            {isSubmitting ? "Submitting..." : "Submit"}
+          <button className="btn-breath" type="submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Submitting...' : 'Submit'}
           </button>
         </form>
       </div>
