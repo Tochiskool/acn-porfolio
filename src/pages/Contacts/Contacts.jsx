@@ -28,7 +28,7 @@ const Contacts = () => {
 
     try {
       const response = await fetch(
-        'https://portfolio2025-1-6fs4.onrender.com/createContacts',
+        `${import.meta.env.VITE_API_URL}/createContacts`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
