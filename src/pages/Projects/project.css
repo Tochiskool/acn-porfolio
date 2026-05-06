@@ -1,89 +1,226 @@
-.mainProjectContainer h1 {
-  width: 60%;
+.mainProjectContainer {
+  width: min(1200px, calc(100% - 2rem));
   margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.projectHero {
   text-align: center;
-  background: linear-gradient(to right, var(--activeColor), var(--mainColor));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  padding: 3rem 2rem;
+  margin-bottom: 3rem;
+  border-radius: 32px;
+  background: linear-gradient(
+      135deg,
+      rgba(41, 9, 74, 0.95),
+      rgba(20, 22, 22, 0.95)
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(234, 122, 4, 0.35),
+      transparent 35%
+    );
+  color: #fff;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+}
+
+.projectEyebrow {
+  display: inline-block;
   margin-bottom: 1rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: rgba(234, 122, 4, 0.15);
+  color: #ffb347;
+  border: 1px solid rgba(234, 122, 4, 0.35);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.projectHero h1 {
+  width: min(850px, 100%);
+  margin: 0 auto 1rem;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+.projectHero p {
+  width: min(720px, 100%);
+  margin: 0 auto 1.5rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.projectHero h2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+  background: #fff;
+  color: #29094a;
+  font-size: 0.95rem;
+  font-weight: 800;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
 .mainProjectContainer .projectsContainer {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
-  margin-bottom: 2rem;
 }
 
 .mainProjectContainer .projectsContainer .projectDetails {
+  position: relative;
   display: flex;
-  flex: 0 2 400px;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  min-height: 100%;
+  padding: 1rem;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(41, 9, 74, 0.08);
+  box-shadow: 0 18px 55px rgba(20, 22, 22, 0.1);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.mainProjectContainer .projectsContainer .projectDetails::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(234, 122, 4, 0.12), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.mainProjectContainer .projectsContainer .projectDetails:hover {
+  transform: translateY(-8px);
+  border-color: rgba(234, 122, 4, 0.35);
+  box-shadow: 0 28px 75px rgba(20, 22, 22, 0.16);
+}
+
+.mainProjectContainer .projectsContainer .projectDetails:hover::before {
+  opacity: 1;
 }
 
 .mainProjectContainer .projectsContainer .projectDetails img {
+  width: 100%;
+  height: 260px;
   object-fit: cover;
-  object-position: center -1.5rem;
-  width: 200px;
-  height: 200px;
-  flex-shrink: 0; /*prevent image from shrinking */
+  object-position: center top;
+  border-radius: 22px;
+  background: #f4f4f4;
+  box-shadow: inset 0 0 0 1px rgba(41, 9, 74, 0.08);
 }
+
 .projectContent {
-  flex: 1; /* take the remaining space */
+  position: relative;
+  z-index: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding: 1.25rem 0.5rem 0.5rem;
 }
 
 .projectDetails h4 {
-  background: linear-gradient(to right, var(--activeColor), var(--mainColor));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  justify-content: center;
+  margin: 0 0 0.75rem;
+  color: #141616;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-weight: 900;
   text-align: center;
 }
+
 .projectDetails p {
-  background: linear-gradient(to right, var(--activeColor), var(--mainColor));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  margin: 0.25rem 0;
+  color: rgba(20, 22, 22, 0.72);
+  font-size: 0.95rem;
+  line-height: 1.6;
   text-align: center;
 }
+
+.projectDetails p:first-of-type {
+  display: inline-flex;
+  align-self: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(41, 9, 74, 0.08);
+  color: #29094a;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 .projectContent .links {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin-top: 1rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #29094a, #ea7a04);
+  color: #fff;
   text-decoration: none;
-  text-align: center;
+  font-weight: 800;
+  box-shadow: 0 12px 28px rgba(234, 122, 4, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Animate images */
-@keyframes breathe {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
+.projectContent .links:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(234, 122, 4, 0.32);
 }
 
-.projectDetails img {
-  animation: breathe 3s ease-in-out infinite;
-}
+@media (max-width: 900px) {
+  .mainProjectContainer .projectsContainer {
+    grid-template-columns: 1fr;
+  }
 
-@media (max-width: 768px) {
-  .mainProjectContainer h1 {
-    width: 100%;
+  .mainProjectContainer .projectsContainer .projectDetails img {
+    height: 240px;
   }
 }
 
 @media (max-width: 480px) {
-  .mainProjectContainer h1 {
-    width: 100%;
+  .mainProjectContainer {
+    width: min(100% - 1rem, 1200px);
+    padding: 2rem 0;
+  }
+
+  .projectHero {
+    padding: 2rem 1rem;
+    border-radius: 24px;
+  }
+
+  .projectHero h1 {
+    font-size: 2rem;
+  }
+
+  .projectHero p {
+    font-size: 0.95rem;
+  }
+
+  .mainProjectContainer .projectsContainer {
+    gap: 1.25rem;
+  }
+
+  .mainProjectContainer .projectsContainer .projectDetails {
+    border-radius: 22px;
+  }
+
+  .mainProjectContainer .projectsContainer .projectDetails img {
+    height: 210px;
+    border-radius: 18px;
   }
 }

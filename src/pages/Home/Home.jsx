@@ -1,74 +1,77 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, NavLink } from 'react-router';
 import './home.css';
 import { useTheme } from '../../components/UseTheme/useTheme';
+
 import img1 from '/assets/christian.jpeg';
 import img2 from '/assets/worker.jpg';
 import img3 from '/assets/father.jpg';
 import img4 from '/assets/books.jpeg';
 
 const careers = [
-  "👋 Hey there! I'm a passionate developer who turns coffee into clean code.",
-  '🚀 I love building interactive, efficient, and meaningful web experiences.',
-  '🧠 Constant learner, problem solver, and fan of clever code patterns.',
-  '💬 Let’s connect, collaborate, and create something awesome together!',
+  "👋 Hey there! I'm Christian — a software engineer who turns ideas into clean, useful digital products.",
+  '🚀 I build responsive web applications with React, Node.js, MongoDB, APIs, authentication, and strong frontend structure.',
+  '📊 I also work with Excel, Power BI, dashboards, reporting, and data-driven business thinking.',
+  '🧠 My journey is built on discipline, problem-solving, continuous learning, and professional execution.',
 ];
+
+const images = [img1, img2, img3, img4];
 
 const Home = () => {
   const { isDarkMode } = useTheme();
+
   const [text, setText] = useState('');
   const [careerIndex, setCareerIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [fade, setFade] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [previousImageIndex, setPreviousImageIndex] = useState(null);
 
-  const images = [img1, img2, img3, img4];
-  const typingSpeed = 50;
-  const pauseDuration = 1500;
-
   const timeoutRef = useRef(null);
 
-  // Image slider every 10 seconds
+  const typingSpeed = 45;
+  const pauseDuration = 1800;
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setPreviousImageIndex(currentImageIndex);
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setCurrentImageIndex((prevIndex) => {
+        setPreviousImageIndex(prevIndex);
+        return (prevIndex + 1) % images.length;
+      });
     }, 10000);
+
     return () => clearInterval(interval);
-  }, [currentImageIndex, images.length]);
+  }, []);
 
   useEffect(() => {
     if (isPaused) return;
 
-    if (charIndex < careers[careerIndex].length) {
+    const currentCareer = careers[careerIndex];
+
+    if (charIndex < currentCareer.length) {
       timeoutRef.current = setTimeout(() => {
-        setText((prev) => prev + careers[careerIndex][charIndex]);
+        setText((prev) => prev + currentCareer[charIndex]);
         setCharIndex((prev) => prev + 1);
       }, typingSpeed);
     } else {
-      // Done typing current line
       setIsPaused(true);
+
       timeoutRef.current = setTimeout(() => {
-        // Move to next career line
-        setIsPaused(false);
-        setCharIndex(0);
         setText('');
+        setCharIndex(0);
         setCareerIndex((prev) => (prev + 1) % careers.length);
-        setFade(true);
+        setIsPaused(false);
       }, pauseDuration);
     }
 
-    // This is the key fix: add careerIndex as a dependency 👇
-  }, [charIndex, isPaused, careerIndex]);
-  useEffect(() => {
     return () => clearTimeout(timeoutRef.current);
-  }, []);
+  }, [charIndex, careerIndex, isPaused]);
+
   return (
     <>
-      <header>
+      <header className="homeHeader">
         <div className={`center ${isDarkMode ? 'dark' : 'light'}`}>
+          <span className="homeEyebrow">Portfolio of A Christian Ndifor</span>
+
           <h1
             data-aos="fade-right"
             data-aos-offset="300"
@@ -76,47 +79,51 @@ const Home = () => {
           >
             When the drive is high, the result is overwhelming
           </h1>
+
           <h3 data-aos="zoom-in-up">
             A Christian N <span id="smiley">🥋</span>
           </h3>
         </div>
       </header>
-      {/* <hr className='line' /> */}
+
       <main>
-        <section
-          data-aos="zoom-out-down"
-          className="mainContainer"
-          style={{
-            background: `url(${images[currentImageIndex]}) center/cover no-repeat`,
-          }}
-        >
-          {/* Background Layers */}
+        <section data-aos="zoom-out-down" className="mainContainer">
           {previousImageIndex !== null && (
             <div
-              className="backgroundImage"
+              className="backgroundImage previousImage"
               style={{
                 backgroundImage: `url(${images[previousImageIndex]})`,
-                opacity: 0,
               }}
-            ></div>
+            />
           )}
+
           <div
-            className="backgroundImage"
+            className="backgroundImage activeImage"
             style={{
               backgroundImage: `url(${images[currentImageIndex]})`,
-              opacity: 1,
             }}
-          ></div>
+          />
+
+          <div className="heroOverlay"></div>
+
           <div className="left">
             <div className="imgOfChris">
-              <h1>Junior Javascript | React Engineer | MERN STACK</h1>
-              <p>Devoted Software engineer</p>
+              <span className="heroBadge">MERN Stack Developer</span>
+
+              <h1>Software Engineer | React Developer | Data-Minded Builder</h1>
+
+              <p>
+                Building clean interfaces, scalable applications, business
+                dashboards, and digital products with purpose.
+              </p>
             </div>
           </div>
+
           <div className="right">
             <div className="typingWrapper">
-              <div className={`typingText ${!fade ? 'hidden' : ''}`}>
+              <div className="typingText">
                 <h2 className="hero-subtitle">{text}</h2>
+                <span className="typingCursor">|</span>
               </div>
             </div>
           </div>

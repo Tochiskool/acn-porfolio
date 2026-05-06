@@ -1,40 +1,144 @@
-/* styles.css */
+.aboutSection {
+  width: min(1150px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 4rem 0;
+}
 
 .aboutContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1.3fr 0.7fr;
   align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
+
+.aboutIntro {
+  padding: 2rem;
+  border-radius: 32px;
+  background: linear-gradient(
+      135deg,
+      rgba(41, 9, 74, 0.08),
+      rgba(234, 122, 4, 0.08)
+    ),
+    rgba(255, 255, 255, 0.85);
+  box-shadow: 0 20px 55px rgba(20, 22, 22, 0.08);
+}
+
 .extra-big-heading {
-  font-size: 6rem;
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 900;
-  letter-spacing: 1px;
-  line-height: 1.2;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
   background: linear-gradient(to right, var(--activeColor), var(--mainColor));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .normal-big {
   background: linear-gradient(to right, var(--activeColor), var(--mainColor));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-style: italic;
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   font-family: cursive;
 }
+
 .aboutContainer .extra-big-heading,
 .aboutContainer .normal-big {
   text-align: center;
 }
+
+.aboutBadge {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 28px;
+  background: linear-gradient(
+    135deg,
+    var(--mainColorLight),
+    var(--activeColor)
+  );
+  box-shadow: 0 22px 60px rgba(20, 22, 22, 0.18);
+}
+
+.aboutBadge span {
+  display: block;
+  padding: 1rem;
+  border-radius: 18px;
+  text-align: center;
+  color: var(--textColor);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.aboutContentCard {
+  padding: 2.5rem;
+  border-radius: 32px;
+  background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(245, 245, 245, 0.92)
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(234, 122, 4, 0.18),
+      transparent 35%
+    );
+  border: 1px solid rgba(41, 9, 74, 0.08);
+  box-shadow: 0 25px 70px rgba(20, 22, 22, 0.1);
+}
+
 .paraAboutEl {
-  margin: 1rem;
+  margin: 0 0 1.2rem;
   text-align: justify;
   line-height: 2rem;
-  font-size: 1rem;
+  font-size: 1.02rem;
+  color: rgba(20, 22, 22, 0.82);
 }
-/* Responsive Grid: stack items on small screens */
+
+.paraAboutEl:last-child {
+  margin-bottom: 0;
+}
+
+.aboutStart {
+  font-size: 2rem;
+  margin-right: 0.4rem;
+}
+
 @media (max-width: 768px) {
+  .aboutSection {
+    padding: 2.5rem 0;
+  }
+
   .aboutContainer {
-    grid-template-columns: 1fr; /* stack left and right vertically */
+    grid-template-columns: 1fr;
+  }
+
+  .aboutIntro,
+  .aboutBadge,
+  .aboutContentCard {
+    padding: 1.5rem;
+    border-radius: 24px;
+  }
+
+  .paraAboutEl {
+    text-align: left;
+    font-size: 0.98rem;
+    line-height: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    width: min(100% - 1rem, 1150px);
+  }
+
+  .aboutStart {
+    display: block;
+    margin-bottom: 0.5rem;
   }
 }
