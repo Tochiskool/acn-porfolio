@@ -36,6 +36,14 @@ const Project = () => {
       skill: 'Mobile-first ecommerce web application. Work in progress.',
       link: 'https://kamirachemicals-ehku.vercel.app/',
     },
+    {
+      id: 4,
+      name: 'Nevio Bole',
+      image: '/projectImages/nevio.png',
+      stack: 'React | Express | CSS3 | Node | MongoDB',
+      skill: 'Mobile-first ecommerce web application. Work in progress.',
+      link: 'https://nevio-bole.vercel.app/',
+    },
   ];
 
   return (
