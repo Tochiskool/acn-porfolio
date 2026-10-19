@@ -11,22 +11,26 @@ import {
   trackPageView,
 } from './utils/analytics';
 
+// Tracks page navigation after analytics consent.
 const AnalyticsTracker = ({ consentAccepted }) => {
   const location = useLocation();
 
   useEffect(() => {
+    // Never track without visitor consent.
     if (!consentAccepted) return;
 
     let cancelled = false;
 
     const path = location.pathname + location.search + location.hash;
 
+    // Load GA4 and record the current route.
     loadAnalytics().then((loaded) => {
       if (!cancelled && loaded) {
         trackPageView(path);
       }
     });
 
+    // Prevent stale asynchronous callbacks.
     return () => {
       cancelled = true;
     };
@@ -36,18 +40,22 @@ const AnalyticsTracker = ({ consentAccepted }) => {
 };
 
 const App = () => {
+  // Initialize consent from localStorage.
   const [consentAccepted, setConsentAccepted] = useState(
     () => getAnalyticsConsent() === 'accepted'
   );
 
   return (
     <BrowserRouter>
+      {/* Google Analytics route tracking */}
       <AnalyticsTracker consentAccepted={consentAccepted} />
 
+      {/* Existing portfolio application */}
       <ErrorBoundary>
         <AppContent />
       </ErrorBoundary>
 
+      {/* Cookie consent management */}
       <CookieConsent onConsentChange={setConsentAccepted} />
     </BrowserRouter>
   );
