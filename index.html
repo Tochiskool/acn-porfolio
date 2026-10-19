@@ -1,13 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- =====================================
+         BASIC HTML & RESPONSIVENESS
+    ====================================== -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/assets/logo.jpeg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A-Christian-N Official Portfolio</title>
+
+    <!-- Website favicon -->
+    <link rel="icon" type="image/jpeg" href="/assets/logo.jpeg" />
+
+    <!-- =====================================
+         PRIMARY SEO METADATA
+    ====================================== -->
+
+    <!-- Search engine title -->
+    <title>Christian Ndifor | Full Stack Developer & Digital Solutions</title>
+
+    <!-- Search engine description -->
+    <meta
+      name="description"
+      content="Explore the portfolio of Christian Ndifor, a Full Stack Developer in Italy specializing in React, Node.js, Express, MongoDB, and custom web applications."
+    />
+
+    <!-- Allow search engines to index the website -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Preferred canonical URL -->
+    <link rel="canonical" href="https://www.a-chris-n.com/" />
+
+    <!-- =====================================
+         OPEN GRAPH (SOCIAL SHARING)
+    ====================================== -->
+
+    <meta property="og:type" content="website" />
+
+    <meta
+      property="og:title"
+      content="Christian Ndifor | Full Stack Developer"
+    />
+
+    <meta
+      property="og:description"
+      content="React, Node.js, MongoDB and custom web solutions. Explore my projects and development experience."
+    />
+
+    <meta property="og:url" content="https://www.a-chris-n.com/" />
+
+    <meta property="og:site_name" content="Christian Ndifor Portfolio" />
+
+    <!-- =====================================
+         TWITTER / X SHARING
+    ====================================== -->
+
+    <meta name="twitter:card" content="summary" />
+
+    <meta
+      name="twitter:title"
+      content="Christian Ndifor | Full Stack Developer"
+    />
+
+    <meta
+      name="twitter:description"
+      content="Explore my Full Stack development projects, technical skills, and digital solutions."
+    />
+
+    <!-- =====================================
+         STRUCTURED DATA (JSON-LD)
+    ====================================== -->
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Christian Ndifor",
+        "url": "https://www.a-chris-n.com/",
+        "jobTitle": "Full Stack Web Developer",
+        "description": "Full Stack Developer specializing in React, Node.js, Express, MongoDB, and digital solutions.",
+        "knowsAbout": [
+          "React",
+          "JavaScript",
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "Web Development",
+          "REST APIs"
+        ],
+        "sameAs": ["https://www.linkedin.com/in/christian-n-awemu-6553491b9/"]
+      }
+    </script>
   </head>
+
   <body>
+    <!-- React application root -->
     <div id="root"></div>
+
+    <!-- React + Vite application -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
