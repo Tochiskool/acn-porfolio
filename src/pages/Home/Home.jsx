@@ -1,135 +1,198 @@
-import React, { useState, useEffect, useRef } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import './home.css';
 import { useTheme } from '../../components/UseTheme/useTheme';
 
-import img1 from '/assets/christian.jpeg';
-import img2 from '/assets/worker.jpg';
-import img3 from '/assets/father.jpg';
-import img4 from '/assets/books.jpeg';
+import portrait from '/assets/christian.jpeg';
 
-const careers = [
-  "👋 Hey there! I'm Christian — a software engineer who turns ideas into clean, useful digital products.",
-  '🚀 I build responsive web applications with React, Node.js, MongoDB, APIs, authentication, and strong frontend structure.',
-  '📊 I also work with Excel, Power BI, dashboards, reporting, and data-driven business thinking.',
-  '🧠 My journey is built on discipline, problem-solving, continuous learning, and professional execution.',
+const specialties = [
+  'Full-Stack Development',
+  'React & Modern Frontend Engineering',
+  'Node.js, Express & MongoDB',
+  'Business Intelligence & Analytics',
+  'Building Real-World Digital Products',
 ];
 
-const images = [img1, img2, img3, img4];
+const expertise = [
+  {
+    number: '01',
+    title: 'Frontend',
+    detail: 'React · JavaScript · CSS',
+  },
+  {
+    number: '02',
+    title: 'Backend',
+    detail: 'Node.js · Express · MongoDB',
+  },
+  {
+    number: '03',
+    title: 'Data',
+    detail: 'Power BI · Excel · Analytics',
+  },
+];
 
 const Home = () => {
   const { isDarkMode } = useTheme();
 
-  const [text, setText] = useState('');
-  const [careerIndex, setCareerIndex] = useState(0);
+  const [specialtyIndex, setSpecialtyIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [previousImageIndex, setPreviousImageIndex] = useState(null);
-
-  const timeoutRef = useRef(null);
-
-  const typingSpeed = 45;
-  const pauseDuration = 1800;
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => {
-        setPreviousImageIndex(prevIndex);
-        return (prevIndex + 1) % images.length;
-      });
-    }, 10000);
+    const current = specialties[specialtyIndex];
 
-    return () => clearInterval(interval);
-  }, []);
+    const delay =
+      !isDeleting && charIndex === current.length
+        ? 2200
+        : isDeleting
+        ? 35
+        : 65;
 
-  useEffect(() => {
-    if (isPaused) return;
-
-    const currentCareer = careers[careerIndex];
-
-    if (charIndex < currentCareer.length) {
-      timeoutRef.current = setTimeout(() => {
-        setText((prev) => prev + currentCareer[charIndex]);
+    const timeout = setTimeout(() => {
+      if (!isDeleting && charIndex < current.length) {
         setCharIndex((prev) => prev + 1);
-      }, typingSpeed);
-    } else {
-      setIsPaused(true);
+      } else if (!isDeleting) {
+        setIsDeleting(true);
+      } else if (charIndex > 0) {
+        setCharIndex((prev) => prev - 1);
+      } else {
+        setIsDeleting(false);
+        setSpecialtyIndex(
+          (prev) => (prev + 1) % specialties.length
+        );
+      }
+    }, delay);
 
-      timeoutRef.current = setTimeout(() => {
-        setText('');
-        setCharIndex(0);
-        setCareerIndex((prev) => (prev + 1) % careers.length);
-        setIsPaused(false);
-      }, pauseDuration);
-    }
-
-    return () => clearTimeout(timeoutRef.current);
-  }, [charIndex, careerIndex, isPaused]);
+    return () => clearTimeout(timeout);
+  }, [charIndex, specialtyIndex, isDeleting]);
 
   return (
-    <>
-      <header className="homeHeader">
-        <div className={`center ${isDarkMode ? 'dark' : 'light'}`}>
-          <span className="homeEyebrow">Portfolio of A Christian Ndifor</span>
+    <main
+      className={`portfolioHome ${
+        isDarkMode ? 'portfolioDark' : 'portfolioLight'
+      }`}
+    >
+      <section className="portfolioHero">
+        <div className="heroContent">
+          <p className="heroEyebrow">
+            <span className="statusDot" aria-hidden="true" />
+            SOFTWARE ENGINEER / FULL-STACK DEVELOPER
+          </p>
 
-          <h1
-            data-aos="fade-right"
-            data-aos-offset="300"
-            data-aos-easing="ease-in-sine"
-          >
-            When the drive is high, the result is overwhelming
+          <h1>
+            Building software
+            <br />
+            that <span>solves real problems.</span>
           </h1>
 
-          <h3 data-aos="zoom-in-up">
-            A Christian N <span id="smiley">🥋</span>
-          </h3>
+          <p className="heroDescription">
+            I'm Christian Ndifor, a full-stack developer
+            specializing in React, Node.js, Express, and
+            MongoDB. I turn complex business requirements
+            into thoughtful, functional digital products.
+          </p>
+
+          <div className="heroTyping">
+            <span className="typingLabel">
+              I SPECIALIZE IN
+            </span>
+
+            <div className="typingLine" aria-hidden="true">
+              <span>
+                {specialties[specialtyIndex].slice(0, charIndex)}
+              </span>
+              <span className="typingCursor" />
+            </div>
+          </div>
+
+          <div className="heroActions">
+            <a href="/projects" className="primaryAction">
+              View selected work
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="#contact" className="secondaryAction">
+              Get in touch
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div className="heroMeta">
+            <span>BASED IN ITALY</span>
+            <span>FULL-STACK ENGINEERING</span>
+            <span>PRODUCT & DATA</span>
+          </div>
         </div>
-      </header>
 
-      <main>
-        <section data-aos="zoom-out-down" className="mainContainer">
-          {previousImageIndex !== null && (
-            <div
-              className="backgroundImage previousImage"
-              style={{
-                backgroundImage: `url(${images[previousImageIndex]})`,
-              }}
+        <div className="heroVisual">
+          <div className="portraitFrame">
+            <img
+              src={portrait}
+              alt="Christian Ndifor"
+              fetchPriority="high"
             />
-          )}
-
-          <div
-            className="backgroundImage activeImage"
-            style={{
-              backgroundImage: `url(${images[currentImageIndex]})`,
-            }}
-          />
-
-          <div className="heroOverlay"></div>
-
-          <div className="left">
-            <div className="imgOfChris">
-              <span className="heroBadge">MERN Stack Developer</span>
-
-              <h1>Software Engineer | React Developer | Data-Minded Builder</h1>
-
-              <p>
-                Building clean interfaces, scalable applications, business
-                dashboards, and digital products with purpose.
-              </p>
-            </div>
           </div>
 
-          <div className="right">
-            <div className="typingWrapper">
-              <div className="typingText">
-                <h2 className="hero-subtitle">{text}</h2>
-                <span className="typingCursor">|</span>
-              </div>
-            </div>
+          <div className="portraitCaption">
+            <span>CHRISTIAN NDIFOR</span>
+            <span>ENGINEER / BUILDER</span>
           </div>
-        </section>
-      </main>
-    </>
+        </div>
+      </section>
+
+      <section
+        className="expertiseSection"
+        aria-labelledby="expertiseTitle"
+      >
+        <div className="expertiseIntro">
+          <p className="sectionEyebrow">
+            WHAT I WORK WITH
+          </p>
+
+          <h2 id="expertiseTitle">
+            Engineering meets business thinking.
+          </h2>
+        </div>
+
+        <div className="expertiseGrid">
+          {expertise.map((item) => (
+            <article
+              className="expertiseItem"
+              key={item.number}
+            >
+              <span className="expertiseNumber">
+                {item.number}
+              </span>
+
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="contactStrip" id="contact">
+        <div>
+          <p className="sectionEyebrow">
+            LET'S CONNECT
+          </p>
+
+          <h2>
+            Have a project or opportunity in mind?
+          </h2>
+        </div>
+
+        <a
+          href="https://www.linkedin.com/in/christian-n-awemu-6553491b9/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contactAction"
+        >
+          Connect on LinkedIn
+          <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+    </main>
   );
 };
 

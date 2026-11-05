@@ -1,83 +1,73 @@
 .footer {
-  background-color: var(--mainColor);
-  color: var(--mainColorLight);
-  padding: 1.5rem 1rem;
+  background: #191a1d;
+  color: #eaeaea;
+  padding: 45px 24px 24px;
   text-align: center;
+  border-top: 2px solid var(--mainColor, #ea7a04);
 }
 
 .footer-content {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 16px 35px;
+  margin-bottom: 26px;
 }
 
 .footer-link {
-  color: var(--mainColorLight);
-  text-decoration: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 9px;
+  color: #d4d4d4;
+  font-size: 13px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: color 180ms ease;
 }
 
-.footer-link:hover {
-  color: var(--mainColorLight);
+.footer-link:hover,
+.footer-cookie-link:hover {
+  color: var(--mainColor, #ea7a04);
 }
 
 .footer-icon {
-  font-size: 1.2rem;
+  font-size: 16px;
 }
 
-.footer-copy {
-  font-size: 0.85rem;
-  color: var(--mainColorLight);
-}
-
-/* Cookie preferences section */
 .footer-privacy {
   display: flex;
   justify-content: center;
-  margin-top: 12px;
+  margin: 15px 0;
 }
 
-/* Subtle footer link instead of a floating button */
 .footer-cookie-link {
-  background: transparent;
-  border: none;
-  color: inherit;
-  font-size: 12px;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  cursor: pointer;
-  opacity: 0.8;
   padding: 8px;
+  border: none;
+  background: transparent;
+  color: #a5a5a5;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-.footer-cookie-link:hover {
-  opacity: 1;
+.footer-cookie-link:focus-visible,
+.footer-link:focus-visible {
+  outline: 2px solid var(--mainColor, #ea7a04);
+  outline-offset: 4px;
 }
 
-.footer-cookie-link:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 3px;
-}
-
-@media (max-width: 768px) {
+.footer-copy {
+  margin: 15px 0 0;
+  color: #888;
+  font-size: 12px;
 }
 
 @media (max-width: 480px) {
-  .footer-link {
-    color: var(--mainColorLight);
-    text-decoration: none;
-    display: flex;
-    flex: 0 0 50px;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 0.2rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  .footer-content {
+    flex-direction: column;
+    gap: 18px;
   }
 }
