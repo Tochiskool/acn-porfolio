@@ -24,13 +24,21 @@ const projectData = [
   },
   {
     id: 2,
-    name: 'Ace Health Care Solution',
-    category: 'Healthcare Web Platform',
-    image: '/projectImages/nelo.png',
+    name: "Zanola's ERP System",
+    category: 'Multi-Tenant SaaS ERP Platform',
+    image: '/projectImages/erp.png',
     description:
-      'A responsive healthcare website designed to present services clearly and provide an accessible experience across desktop and mobile devices.',
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'CSS3'],
-    link: 'https://acehealthcaresolution.org/',
+      'A scalable, multi-tenant ERP platform designed to help businesses manage projects, employees, workforce scheduling, attendance, and operational workflows. Features secure role-based access, project tracking, and subscription-based management.',
+    technologies: [
+      'React',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'Mongoose',
+      'JWT',
+      'CSS3',
+    ],
+    link: 'https://erp-system-three-dun.vercel.app/',
   },
   {
     id: 3,
@@ -45,6 +53,16 @@ const projectData = [
   },
   {
     id: 4,
+    name: 'Ace Health Care Solution',
+    category: 'Healthcare Web Platform',
+    image: '/projectImages/nelo.png',
+    description:
+      'A responsive healthcare website designed to present services clearly and provide an accessible experience across desktop and mobile devices.',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'CSS3'],
+    link: 'https://acehealthcaresolution.org/',
+  },
+  {
+    id: 5,
     name: 'Nevio Bole',
     category: 'Web Application',
     image: '/projectImages/nevio.png',
